@@ -7,8 +7,8 @@ with open('schema.sql') as f:
 
 cur=connection.cursor()
 
-cur.execute("INSERT INTO posts (title,content) VALUES (?,?),('First post','Content for first post)")
-cur.execute("INSERT INTO posts (title,content) VALUES (?,?),('Second post','Content for second post)")
+cur.execute("INSERT INTO posts (title,content) VALUES (?,?)",('First post','Content for first post'))
+cur.execute("INSERT INTO posts (title,content) VALUES (?,?)",('Second post','Content for second post'))
 
 connection.commit()
 connection.close()
